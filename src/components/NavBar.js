@@ -58,7 +58,14 @@ const NavBar = (props) => {
             <Typography
               variant='h6'
               component='div'
-              sx={{ fontFamily: "Raleway", cursor: "pointer" }}
+              sx={{
+                fontFamily: "Raleway",
+                cursor: "pointer",
+                transition: "all 0.2s",
+                "&:hover": {
+                  color: "var(--white)",
+                },
+              }}
               onClick={() => handleNavClick("/")}
             >
               MyBlogs
@@ -104,7 +111,12 @@ const NavBar = (props) => {
                   <Button
                     key={uuidv4()}
                     variant='text'
-                    sx={{ color: "var(--nav-font)" }}
+                    sx={{
+                      color: "var(--nav-font)",
+                      "&:hover": {
+                        backgroundColor: "rgba(255, 255, 255, 0.2)",
+                      },
+                    }}
                     onClick={() => handleNavClick(page.url)}
                   >
                     {page.page}
